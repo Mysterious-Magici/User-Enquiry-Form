@@ -1,9 +1,7 @@
 const enquiryModel = require("../../models/enquiry.model");
 const mongoose = require("mongoose");
 
-// ------------------------------------------------------------
-//  CREATE  | POST /api/website/enquiry/insert
-// ------------------------------------------------------------
+
 const enquiryInsert = async (req, res) => {
   try {
     const { name, email, phone, message } = req.body;
@@ -29,9 +27,7 @@ const enquiryInsert = async (req, res) => {
   }
 };
 
-// ------------------------------------------------------------
-//  READ (list)  | GET /api/website/enquiry/read
-// ------------------------------------------------------------
+
 const enquiryRead = async (_req, res) => {
   try {
     const data = await enquiryModel.find().sort({ createdAt: -1 });
@@ -49,9 +45,6 @@ const enquiryRead = async (_req, res) => {
   }
 };
 
-// ------------------------------------------------------------
-//  READ (single)  | GET /api/website/enquiry/view/:id
-// ------------------------------------------------------------
 const enquiryShow = async (req, res) => {
   try {
     const { id } = req.params;
@@ -75,9 +68,7 @@ const enquiryShow = async (req, res) => {
   }
 };
 
-// ------------------------------------------------------------
-//  UPDATE  | PUT /api/website/enquiry/update/:id
-// ------------------------------------------------------------
+
 const enquiryUpdate = async (req, res) => {
   try {
     const { id } = req.params;
@@ -115,9 +106,7 @@ const enquiryUpdate = async (req, res) => {
   }
 };
 
-// ------------------------------------------------------------
-//  DELETE  | DELETE /api/website/enquiry/delete/:id
-// ------------------------------------------------------------
+
 const enquiryDelete = async (req, res) => {
   try {
     const { id } = req.params;
