@@ -9,10 +9,10 @@ const {
 
 let enquiryRouter = express.Router();
 
-enquiryRouter.post("/insert", enquiryInsert);      // CREATE
-enquiryRouter.get("/read", enquiryRead);           // READ (list)
-enquiryRouter.get("/view/:id", enquiryShow);       // READ (single)
-enquiryRouter.put("/update/:id", enquiryUpdate);   // UPDATE
-enquiryRouter.delete("/delete/:id", enquiryDelete);// DELETE
+enquiryRouter.post("/insert", enquiryInsert);      
+enquiryRouter.get("/read", enquiryRead);           
+enquiryRouter.get("/view/:id", enquiryShow);       
+enquiryRouter.put("/update/:id", enquiryUpdate);   
+enquiryRouter.delete("/delete/:id", enquiryDelete);
 
 module.exports = enquiryRouter;
