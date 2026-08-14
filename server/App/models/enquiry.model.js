@@ -15,7 +15,7 @@ let enquirySchema = new Schema(
       lowercase: true,
     },
     phone: {
-      // Stored as String so leading zeros / special chars are preserved
+    
       type: String,
       required: true,
       trim: true,
