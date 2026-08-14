@@ -1,97 +1,69 @@
-# User Enquiry Management System
+# User Enquiry Management Portal
 
-A full-stack web application for managing user enquiries through a simple and responsive interface.
+A modern, full-stack web application for submitting and managing user enquiries through a public, responsive interface deployed on Netlify with serverless functions and managed Postgres database.
 
 ## Features
 
-* Create and submit enquiries
-* View enquiry records
-* Update enquiry details
-* Delete enquiries
-* RESTful API integration
-* MongoDB database support
-* Responsive React-based interface
-* Environment-based configuration for sensitive settings
+* **Public & Free Access**: Anyone can submit enquiries directly with zero login or setup required.
+* **Full CRUD Operations**: Create, Read, Update, and Delete enquiries in real time.
+* **Serverless Architecture**: Powered by Netlify Functions with automated routing.
+* **Persistent Managed Database**: Backed by Netlify Database (Postgres) with Drizzle ORM and automatic migrations.
+* **Search & Real-time Filtering**: Instant search across names, emails, phone numbers, and messages.
+* **Sorting & View Modes**: Sort by newest, oldest, or alphabetical order; switch between Table and Grid Card views.
+* **CSV Export**: One-click export of all enquiries into CSV spreadsheet format.
+* **One-Click Demo Fill**: Convenient pre-fill feature to quickly test enquiry submissions.
+* **Modern UI & Responsive Design**: Polished with Tailwind CSS, Flowbite React, and Plus Jakarta Sans typography.
 
 ## Tech Stack
 
 **Frontend**
-
-* React
-* Vite
+* React 19 + Vite
+* Tailwind CSS + Flowbite React
 * Axios
-* Flowbite React
 
-**Backend**
-
-* Node.js
-* Express.js
-* MongoDB
-* Mongoose
+**Backend & Infrastructure**
+* Netlify Functions (TypeScript / ES Modules)
+* Netlify Database (Managed Postgres)
+* Drizzle ORM
 
 ## Project Structure
 
 ```text
-userEnquiry/
-├── client/     # React frontend
-├── server/     # Express backend and API
-├── .gitignore
-└── README.md
+User-Enquiry-Form/
+├── client/
+│   └── vite-project/         # React frontend with Vite & Tailwind
+├── db/
+│   ├── schema.ts             # Drizzle database schema
+│   └── index.ts              # Netlify Database client initialization
+├── netlify/
+│   ├── functions/
+│   │   └── enquiries.mts     # Serverless API endpoints for enquiries
+│   └── database/
+│       └── migrations/       # Automated SQL migrations
+├── server/                   # Legacy Express backend (reference)
+├── netlify.toml              # Netlify build & routing configuration
+├── drizzle.config.ts         # Drizzle ORM migration configuration
+└── package.json              # Root dependencies & scripts
 ```
 
-## Getting Started
-
-### 1. Clone the repository
+## Running Locally with Netlify CLI
 
 ```bash
-git clone https://github.com/Mysterious-Magici/User-Enquiry-Form.git
-cd User-Enquiry-Form
-```
-
-### 2. Setup Backend
-
-```bash
-cd server
+# Install dependencies
 npm install
+npm install --prefix client/vite-project
+
+# Run local development server with Netlify emulation
+npx netlify dev
 ```
-
-Create a `.env` file based on `.env.example`:
-
-```env
-PORT=5000
-MONGO_URI=your_mongodb_connection_string
-```
-
-Start the backend:
-
-```bash
-npm start
-```
-
-### 3. Setup Frontend
-
-Open a new terminal:
-
-```bash
-cd client/vite-project
-npm install
-npm run dev
-```
-
-## Security
-
-Sensitive configuration such as database credentials and environment variables is kept outside version control. A `.env.example` file is provided to document the required configuration.
-
-## Development
-
-The project follows a client-server architecture where the React frontend communicates with the Express backend through REST APIs.
 
 ## License
 
 This project is intended for educational and portfolio purposes.
+
 ## Author
 
-**Akash Karmakar**
+**Akash Karmakar**  
 Computer Science & Engineering Student | West Bengal, India
 
 * GitHub: [Mysterious-Magici](https://github.com/Mysterious-Magici)
