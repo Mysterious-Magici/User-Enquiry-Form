@@ -15,7 +15,6 @@ app.get("/", (_req, res) => {
 
 app.use("/api/website/enquiry", enquiryRouter);
 
-// 404 handler for unknown routes
 app.use((_req, res) => {
   res.status(404).json({ status: 0, message: "Route not found" });
 });
