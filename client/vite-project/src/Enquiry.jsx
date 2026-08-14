@@ -21,7 +21,7 @@ export default function Enquiry() {
   const [loading, setLoading] = useState(true);
   const [submitting, setSubmitting] = useState(false);
   const [deletingId, setDeletingId] = useState(null);
-  const [alert, setAlert] = useState(null); // { type: 'success' | 'fail', msg }
+  const [alert, setAlert] = useState(null); 
   const alertTimer = useRef(null);
 
   const showAlert = (type, msg) => {
