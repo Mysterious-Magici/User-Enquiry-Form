@@ -1,0 +1,22 @@
+[build]
+  command = "npm --prefix client/vite-project run build"
+  publish = "client/vite-project/dist"
+  functions = "netlify/functions"
+
+[functions]
+  node_bundler = "esbuild"
+
+[[redirects]]
+  from = "/api/website/enquiry/*"
+  to = "/.netlify/functions/enquiries"
+  status = 200
+
+[[redirects]]
+  from = "/api/website/enquiry"
+  to = "/.netlify/functions/enquiries"
+  status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
